@@ -66,4 +66,3 @@ short form未能识别的例子：
 4. （类似的错误识别不再写，原因均为括号内为举例、解释说明而产生的的short form，而不是指示了前面的某个phrase，也就是不会找到对应的lf。letter match算法确实不输出sf-lf pair了）
 
 
-
