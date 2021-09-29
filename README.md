@@ -24,3 +24,35 @@ rule based 算法复现与实验：
 short form 识别：平均precision 0.732715461982739 其中766/1201个precision=1  平均recall 0.7357628563498672 其中776/1201个recall=1  平均f1 0.720902973779252  其中662/1201个f1=1
 
 sf-lf pair 识别：平均precision 0.7433414074130139 其中769/1201个precision=1  平均recall 0.724846358193569 其中739/1201个recall=1  平均f1 0.718665681670194  其中638/1201个f1=1
+
+bad case展示：
+short form未能识别的例子：
+V (variant)
+wt (wild-type)
+mAbs (Monoclonal antibodies)
+UDP-glucose (Uridine 5'-diphosphoglucose)
+alpha1A(+NP) (alpha1A channel with NP)
+so (sine oculis)
+gamma IP-10 (interferon gamma (IFN-gamma)-inducible protein 10)
+
+少量因原文分词导致的问题
+
+识别出short之后，未能识别到long form的例子：
+CaMKII ———— Ca2+/calmodulin-dependent protein kinase
+MPG protein ———— 3-Methyladenine-DNA glycosylase
+TMPRSS3 ———— transmembrane serine protease
+
+
+错误识别：
+IGF-I ———— insulin and the insulin-like growth factor-1  （正确的从the之后开始）
+ER ———— extended endoplasmic reticulum （正确的是后两个词）
+（原因基本类似，因为允许的最大长度中，有开头一样的别的词）
+
+错误sf识别：
+CZ  原句：specially in the repeats of charged amino acid-rich region with leucine-zipper like sequences (CZ region/HR1)
+E3, E1, E2  原句：We now report that Mdm2 is a ubiquitin protein ligase (E3)
+Praja1  原句：Replacement of the Mdm2 RING with that of another protein (Praja1)
+（类似的错误识别不再写，原因均为括号内为举例、解释说明而产生的的short form，而不是指示了前面的某个phrase，也就是不会找到对应的lf。letter match算法确实不输出sf-lf pair了）
+
+
+
