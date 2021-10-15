@@ -1,5 +1,11 @@
 # Acronym-I-and-D
 
+## 调用 
+from lettermatch import output_sflf_pair
+short_form,short_long_pair = output_sflf_pair(text)
+
+## 细节
+
 rule based 算法复现与实验：
 
 判断short form的rules如下：
